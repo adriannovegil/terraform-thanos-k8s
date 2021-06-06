@@ -1,8 +1,8 @@
 #------------------------------------------------------------------------------
-# Variables that need to be set
+# Setup the Providers
 #------------------------------------------------------------------------------
-variable "context_name" {
-  description = "Context name"
-  type        = string
-  default = "monitoring"
+provider "helm" {
+  kubernetes {
+    config_path = "~/.kube/config"
+  }
 }

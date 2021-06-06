@@ -6,3 +6,8 @@ variable "context_name" {
   type        = string
   default = "monitoring"
 }
+
+variable "namespace" {
+  description = "Namespace"
+  type        = string
+}

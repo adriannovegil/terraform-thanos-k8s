@@ -1,5 +1,6 @@
 prometheus:
   prometheusSpec:
+    retention: ${retention}
     thanos:
       image: quay.io/thanos/thanos:v0.17.2
       version: v0.17.2

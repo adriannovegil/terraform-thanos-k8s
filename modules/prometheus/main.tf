@@ -25,6 +25,7 @@ resource "helm_release" "monitor-prometheus-operator" {
   chart      = "prometheus-operator"
   namespace  = var.namespace
   values = [
-    "${file("${path.module}/thanos-sidecar.yaml")}"
+    "${templatefile("${path.module}/thanos-sidecar.yaml.tpl",
+      {retention = var.retention})}"
   ]
 }
